@@ -92,7 +92,7 @@ function App() {
           <ProjectCard 
             title="Turing Test"
             description="An AI game where you can chat with AI robot, solve puzzles and escape the room."
-            image="/images/turing-test.jpg"
+            image="/images/turing-test.png"
             tags={['AI', 'Robot', 'Escape Room']}
             link="https://lichi1993315.itch.io/turings-test"
           />
