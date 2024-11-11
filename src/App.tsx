@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Briefcase, Code, Phone, Twitter } from 'lucide-react';
+import { useState, useEffect } from 'react';
+import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Briefcase, Code, Phone, Twitter} from 'lucide-react';
 import Navbar from './components/Navbar';
 import ProjectCard from './components/ProjectCard';
 import SkillBadge from './components/SkillBadge';
@@ -35,7 +35,7 @@ function App() {
               </span>
             </h1>
             <h2 className="text-2xl sm:text-4xl text-gray-300 font-light">
-              Gaming RL & LLM Agent Researcher
+              LLM Agent Researcher & Game Developer
             </h2>
             <h3 className="text-xl text-blue-400">CEO@AgentLive</h3>
           </div>
@@ -69,18 +69,32 @@ function App() {
       <Section id="projects" icon={Briefcase} title="Featured Projects">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <ProjectCard 
-            title="LLM Agent Gaming Platform"
-            description="Revolutionary gaming platform leveraging LLM agents for dynamic, intelligent NPC interactions"
-            image="https://images.unsplash.com/photo-1614728263952-84ea256f9679?auto=format&fit=crop&q=80&w=800"
-            tags={['LLM', 'Reinforcement Learning', 'Game AI']}
-            link="https://github.com"
+            title="Paw Party"
+            description="Play Jackbox-like party game with LLM agents with dynamic, intelligent interactions"
+            image="/images/paw-party.png"
+            tags={['LLM', 'AINPC', 'Game Box']}
+            link="https://pawparty.games"
           />
           <ProjectCard 
-            title="AgentLive Framework"
-            description="Advanced framework for integrating LLM agents into gaming environments with real-time learning capabilities"
-            image="https://images.unsplash.com/photo-1522542550221-31fd19575a2d?auto=format&fit=crop&q=80&w=800"
-            tags={['AI', 'Gaming', 'Machine Learning']}
-            link="https://github.com"
+            title="Cheat'Em"
+            description="An AI party game that allows you to cheat AI NPC to survive the game"
+            image="/images/cheatem.png"
+            tags={['AI', 'Comedy', 'Party Game']}
+            link="https://cheatem.io/"
+          />
+          <ProjectCard 
+            title="Speakrit"
+            description="An AI Pokemon-like game that you can chat with your pokemon and ask them to fight for you."
+            image="/images/speakrit.jpg"
+            tags={['AIGC', 'Turn-based', 'Pokemon-like']}
+            link="https://lichi1993315.itch.io/speakrit"
+          />
+          <ProjectCard 
+            title="Turing Test"
+            description="An AI game where you can chat with AI robot, solve puzzles and escape the room."
+            image="/images/turing-test.jpg"
+            tags={['AI', 'Robot', 'Escape Room']}
+            link="https://lichi1993315.itch.io/turings-test"
           />
         </div>
       </Section>
