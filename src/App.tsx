@@ -1,11 +1,23 @@
-import React from 'react';
-import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Briefcase, Code, Phone } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { Github, Linkedin, Mail, ExternalLink, ChevronDown, Briefcase, Code, Phone, Twitter } from 'lucide-react';
 import Navbar from './components/Navbar';
 import ProjectCard from './components/ProjectCard';
 import SkillBadge from './components/SkillBadge';
 import Section from './components/Section';
 
 function App() {
+  const [showChevron, setShowChevron] = useState(true);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      // Hide chevron after scrolling down 100px
+      setShowChevron(window.scrollY < 100);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen">
       <div className="fixed inset-0 bg-[radial-gradient(ellipse_at_top_right,_var(--tw-gradient-stops))] from-blue-900/20 via-gray-900 to-gray-900 -z-10" />
@@ -32,20 +44,25 @@ function App() {
             innovative AI-driven gaming experiences that push the boundaries of player interaction and engagement.
           </p>
           <div className="flex gap-6">
-            <a href="https://github.com" className="glass-effect p-3 rounded-full hover:scale-110 hover:text-blue-400 transition-all duration-300">
+            <a href="https://github.com/lichi1993315" className="glass-effect p-3 rounded-full hover:scale-110 hover:text-blue-400 transition-all duration-300">
               <Github size={24} />
             </a>
-            <a href="https://linkedin.com" className="glass-effect p-3 rounded-full hover:scale-110 hover:text-blue-400 transition-all duration-300">
+            <a href="https://www.linkedin.com/in/chi-li-aigames/" className="glass-effect p-3 rounded-full hover:scale-110 hover:text-blue-400 transition-all duration-300">
               <Linkedin size={24} />
             </a>
-            <a href="mailto:contact@example.com" className="glass-effect p-3 rounded-full hover:scale-110 hover:text-blue-400 transition-all duration-300">
+            <a href="https://twitter.com/jesse_chili" className="glass-effect p-3 rounded-full hover:scale-110 hover:text-blue-400 transition-all duration-300">
+              <Twitter size={24} />
+            </a>
+            <a href="mailto:jesse@agentlive.ai" className="glass-effect p-3 rounded-full hover:scale-110 hover:text-blue-400 transition-all duration-300">
               <Mail size={24} />
             </a>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce glass-effect p-3 rounded-full">
-          <ChevronDown size={24} />
-        </div>
+        {showChevron && (
+          <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce glass-effect p-3 rounded-full">
+            <ChevronDown size={24} />
+          </div>
+        )}
       </section>
 
       {/* Projects Section */}
@@ -87,7 +104,7 @@ function App() {
             Interested in collaborating on cutting-edge gaming AI projects or discussing the future of LLM agents in gaming? Let's connect!
           </p>
           <a 
-            href="mailto:contact@example.com"
+            href="mailto:jesse@agentlive.ai"
             className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 transition-all px-6 py-3 rounded-lg font-semibold group"
           >
             Contact Me
